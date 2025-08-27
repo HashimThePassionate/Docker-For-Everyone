@@ -67,7 +67,7 @@ Navigate each module by clicking the folder name 👇
 
 | 📁 Folder | 📖 Description |
 |-----------|----------------|
-| [Getting Started](./00_getting_started_ops) | 🐳 Docker Hello-World and Ops basics |
+| [Getting Started](./00_the_big_picture_of_containers/) | 🐳 Docker Hello-World and Ops basics |
 | [Container Poetry](./01_containerizing_poetry) | 📦 Containerizing with Poetry (Python packaging) |
 | [Linux Command Line](./02_linux_command_line) | 🐧 Linux command line essentials |
 | [Building Images](./03_building_images) | 🖼️ Docker Commands Cheat Sheet & Image building |
