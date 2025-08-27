@@ -68,15 +68,16 @@ By following this repo step by step, you will master:
 
 Navigate each module by clicking the folder name 👇
 
-| Folder | Description |
-|--------|-------------|
-| [00_getting_started_ops](./00_getting_started_ops) | Docker Hello-World and Ops basics |
-| [01_containerizing_poetry](./01_containerizing_poetry) | Containerizing with Poetry (Python packaging) |
-| [02_linux_command_line](./02_linux_command_line) | Linux command line essentials |
-| [03_building_images](./03_building_images) | Docker Commands Cheat Sheet & Image building |
-| [04_working_with_containers](./04_working_with_containers) | Container lifecycle, exec, inspect, logs |
-| [05_running_multicontainers_applications](./05_running_multicontainers_applications) | Running multi-container applications |
-| [06_deploying_the_application](./06_deploying_the_application) | Deploying the application with Docker Compose |
+| 📁 Folder | 📖 Description |
+|-----------|----------------|
+| [Getting Started](./00_getting_started_ops) | 🐳 Docker Hello-World and Ops basics |
+| [Container Poetry](./01_containerizing_poetry) | 📦 Containerizing with Poetry (Python packaging) |
+| [Linux Command Line](./02_linux_command_line) | 🐧 Linux command line essentials |
+| [Building Images](./03_building_images) | 🖼️ Docker Commands Cheat Sheet & Image building |
+| [Working With Containers](./04_working_with_containers) | 📦 Container lifecycle, exec, inspect, logs |
+| [Running Multicontainers Applications](./05_running_multicontainers_applications) | 🧩 Running multi-container applications |
+| [Deploying the Application](./06_deploying_the_application) | 🚀 Deploying the application with Docker Compose |
+
 ---
 
 ## 🛡️ Best Practices You’ll Pick Up
