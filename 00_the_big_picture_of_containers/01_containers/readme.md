@@ -19,7 +19,7 @@ In this section, you'll learn **why we have containers, what they do for us, and
 | 7️⃣ | [🐳 Docker and Windows](#-docker-and-windows) | Container support on Windows platforms |
 | 8️⃣ | [🪟 Windows Containers](#-windows-containers) | Running Windows applications in containers |
 | 9️⃣ | [🐧 Linux Containers on Windows](#-linux-containers-on-windows) | Using WSL 2 to run Linux containers on Windows |
-| � | [⚖️ Windows vs. Linux Containers](#️-windows-containers-vs-linux-containers) | Understanding kernel requirements and compatibility |
+| 1️⃣0️⃣ | [⚖️ Windows vs. Linux Containers](#️-windows-containers-vs-linux-containers) | Understanding kernel requirements and compatibility |
 | 1️⃣1️⃣ | [🧩 What about Wasm?](#-what-about-wasm-webassembly) | WebAssembly as an emerging alternative to containers |
 | 1️⃣2️⃣ | [🤖 Docker and AI](#-docker-and-ai) | Container challenges and solutions for AI workloads |
 
