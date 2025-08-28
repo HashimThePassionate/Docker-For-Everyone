@@ -1,10 +1,32 @@
-
 # 📦 **Containers from 30,000 Feet**
 
 Containers have taken over the world! 🌍
-In this section, you’ll learn **why we have containers, what they do for us, and where we can use them.**
+In this section, you'll learn **why we have containers, what they do for us, and where we can use them.**
 
 ---
+
+<details>
+<summary>📋 <strong>Table of Contents</strong></summary>
+
+| 🔢 | 📖 **Section** | 📝 **Description** |
+|-----|----------------|-------------------|
+| 1️⃣ | [🕰️ The Bad Old Days](#️-the-bad-old-days) | Understanding the limitations of traditional server architecture |
+| 2️⃣ | [💡 Hello VMware!](#-hello-vmware) | How Virtual Machines revolutionized server utilization |
+| 3️⃣ | [🐛 VMWarts (Drawbacks of VMs)](#-vmwarts-drawbacks-of-vms) | The problems and limitations of Virtual Machines |
+| 4️⃣ | [👋 Hello Containers!](#-hello-containers) | Introduction to container technology and its advantages |
+| 5️⃣ | [🐧 Linux Containers](#-linux-containers) | The origins and core technologies of modern containers |
+| 6️⃣ | [🐳 Docker to the Rescue](#-docker-to-the-rescue) | How Docker made containers accessible to everyone |
+| 7️⃣ | [🐳 Docker and Windows](#-docker-and-windows) | Container support on Windows platforms |
+| 8️⃣ | [🪟 Windows Containers](#-windows-containers) | Running Windows applications in containers |
+| 9️⃣ | [🐧 Linux Containers on Windows](#-linux-containers-on-windows) | Using WSL 2 to run Linux containers on Windows |
+| � | [⚖️ Windows vs. Linux Containers](#️-windows-containers-vs-linux-containers) | Understanding kernel requirements and compatibility |
+| 1️⃣1️⃣ | [🧩 What about Wasm?](#-what-about-wasm-webassembly) | WebAssembly as an emerging alternative to containers |
+| 1️⃣2️⃣ | [🤖 Docker and AI](#-docker-and-ai) | Container challenges and solutions for AI workloads |
+
+</details>
+
+---
+
 
 ## 🕰️ The Bad Old Days
 
