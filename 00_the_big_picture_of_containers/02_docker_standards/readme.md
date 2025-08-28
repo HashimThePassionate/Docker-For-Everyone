@@ -1,5 +1,46 @@
 # 🐳 **Docker Overview**
 
+<details>
+<summary><strong>📋 Table of Contents</strong></summary>
+
+### 🏢 **Company & Background**
+- [🏢 Docker, Inc.](#-docker-inc)
+
+### ⚙️ **Platform & Architecture**
+- [⚙️ The Docker Platform](#️-the-docker-platform)
+- [🖼️ Docker Architecture](#️-docker-architecture)
+  - [🔹 High-level view (Client ↔ Engine)](#-high-level-view-client--engine)
+  - [🔹 Detailed view (CLI ↔ Daemon ↔ Components)](#-detailed-view-cli--daemon--components)
+
+### 📦 **Standards & Ecosystem**
+- [🐳 **Docker Overview**](#-docker-overview)
+    - [🏢 **Company \& Background**](#-company--background)
+    - [⚙️ **Platform \& Architecture**](#️-platform--architecture)
+    - [📦 **Standards \& Ecosystem**](#-standards--ecosystem)
+  - [🏢 Docker, Inc.](#-docker-inc)
+  - [⚙️ The Docker Platform](#️-the-docker-platform)
+  - [🖼️ Docker Architecture](#️-docker-architecture)
+    - [🔹 High-level view (Client ↔ Engine)](#-high-level-view-client--engine)
+    - [🔹 Detailed view (CLI ↔ Daemon ↔ Components)](#-detailed-view-cli--daemon--components)
+- [📦 **Container-Related Standards and Projects**](#-container-related-standards-and-projects)
+  - [🏛️ Major Influencers](#️-major-influencers)
+  - [🔹 The Open Container Initiative (OCI)](#-the-open-container-initiative-oci)
+    - [📜 Background](#-background)
+    - [📑 Current OCI Standards (Specs)](#-current-oci-standards-specs)
+    - [🚂 Rail Tracks Analogy](#-rail-tracks-analogy)
+    - [🐳 Docker \& OCI Compliance](#-docker--oci-compliance)
+  - [🔹 The Cloud Native Computing Foundation (CNCF)](#-the-cloud-native-computing-foundation-cncf)
+    - [📦 CNCF vs OCI](#-cncf-vs-oci)
+    - [🌟 CNCF Projects](#-cncf-projects)
+    - [🛤️ Project Maturity Phases](#️-project-maturity-phases)
+  - [🔹 The Moby Project](#-the-moby-project)
+    - [🛠️ Key Points](#️-key-points)
+    - [🐳 Docker \& Moby](#-docker--moby)
+
+</details>
+
+---
+
 Docker is at the heart of the modern **container ecosystem**.
 However, the word **Docker** can mean two different things:
 
