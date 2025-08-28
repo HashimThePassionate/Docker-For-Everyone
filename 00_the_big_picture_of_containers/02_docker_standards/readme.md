@@ -103,3 +103,108 @@ The **CLI hides the complexity** of all these tools. You type simple commands �
 
 ---
 
+# 📦 **Container-Related Standards and Projects**
+
+Several important **standards** and **governance bodies** influence container development and the container ecosystem. 🌍
+
+## 🏛️ Major Influencers
+
+* **The OCI (Open Container Initiative)**
+* **The CNCF (Cloud Native Computing Foundation)**
+* **The Moby Project**
+
+---
+
+## 🔹 The Open Container Initiative (OCI)
+
+The **Open Container Initiative (OCI)** is a **governance council** responsible for **low-level container-related standards**.
+It operates under the **Linux Foundation** and was created during the early days of the container ecosystem.
+
+### 📜 Background
+
+* Originated when **CoreOS** opposed Docker’s dominance.
+* CoreOS introduced an **open standard** called **appc** that defined specs for image format and container runtime.
+* They also created a **reference implementation** called **rkt** (pronounced “rocket”).
+* This led to two **competing standards** (Docker vs appc) → causing confusion.
+* To solve this, major players united and created the **OCI** as a **vendor-neutral council**.
+* Result: appc was archived, and **all low-level container specs are now governed by the OCI**.
+
+### 📑 Current OCI Standards (Specs)
+
+1. **image-spec** – Defines the container image format.
+2. **runtime-spec** – Defines how containers should run.
+3. **distribution-spec** – Defines how container images should be distributed and stored.
+
+### 🚂 Rail Tracks Analogy
+
+Just like **standardizing rail tracks** enabled growth in the railway industry 🚉, the OCI standards gave developers confidence to build tools and platforms that work universally with containers.
+
+### 🐳 Docker & OCI Compliance
+
+Modern Docker implements all three OCI specs:
+
+* ✅ **BuildKit** → Creates OCI-compliant images
+* ✅ **Docker runtime** → Runs OCI-compliant containers
+* ✅ **Docker Hub** → Implements the OCI distribution spec (OCI-compliant registry)
+
+**Fun fact:** Docker, Inc. and many other companies have people on the OCI’s **Technical Oversight Board (TOB)**.
+
+---
+
+## 🔹 The Cloud Native Computing Foundation (CNCF)
+
+The **Cloud Native Computing Foundation (CNCF)** is another **Linux Foundation project**, founded in **2015** with the goal:
+
+> “…advancing container technologies and making cloud native computing ubiquitous.” 🌐
+
+### 📦 CNCF vs OCI
+
+* **OCI** → Creates and governs **standards/specifications**
+* **CNCF** → **Hosts and nurtures projects**
+
+### 🌟 CNCF Projects
+
+Some of the important CNCF-hosted projects include:
+
+* Kubernetes ⚙️
+* containerd 🐳
+* Notary 🔐
+* Prometheus 📊
+* Cilium 🔗
+* …and many more
+
+### 🛤️ Project Maturity Phases
+
+All CNCF projects go through **3 stages**:
+
+1. **Sandbox** – Early stage, needs governance support.
+2. **Incubating** – Growing, improving documentation, auditing, and community.
+3. **Graduated** – Mature, production-ready, with strong governance and best practices.
+
+Example: Docker itself uses **containerd** and **Notary**, both CNCF technologies.
+
+---
+
+## 🔹 The Moby Project
+
+The **Moby Project** was created by **Docker** as a **community-led initiative** for developers building **specialized container platforms**.
+
+### 🛠️ Key Points
+
+* Platform builders can pick and choose **Moby tools** to build container platforms.
+* They can combine **Moby tools + in-house tools + third-party tools**.
+* Initially created by **Docker, Inc.**, but now includes members like:
+
+  * Microsoft
+  * Mirantis
+  * Nvidia
+
+### 🐳 Docker & Moby
+
+The **Docker platform** itself is built using:
+
+* Moby Project tools
+* CNCF projects
+* OCI standards
+
+---
