@@ -96,3 +96,102 @@ Then came **Docker** — the technology that **made containers accessible to the
 > But none changed the world 🌍 the way **Docker** has.
 
 ---
+
+# 🐳 **Docker and Windows**
+
+Microsoft worked hard to bring **Docker** and container technologies to the **Windows platform**.
+
+At present, both **Windows desktop** and **Windows Server** platforms support:
+
+* 🪟 **Windows containers**
+* 🐧 **Linux containers**
+
+---
+
+## 🪟 Windows Containers
+
+* Run **Windows applications**.
+* Require a host system with a **Windows kernel**.
+* Supported natively on:
+
+  * Windows 10
+  * Windows 11
+  * All modern versions of **Windows Server**
+
+---
+
+## 🐧 Linux Containers on Windows
+
+* Windows systems can also run **Linux containers** using **WSL 2** (Windows Subsystem for Linux).
+* This makes Windows 10 and Windows 11 great platforms for **developing and testing both Windows and Linux containers**.
+
+⚡ **Note:**
+Despite all the progress on Windows containers, **most containers are Linux-based** because:
+
+* They are **smaller**.
+* They are **faster**.
+* The **Linux tooling ecosystem** is richer and more mature.
+
+---
+
+## ⚖️ Windows Containers vs. Linux Containers
+
+It’s important to remember:
+
+* Containers **share the kernel** of the host they’re running on.
+* 🔹 A **Windows containerized app** requires a **Windows kernel**.
+* 🔹 A **Linux containerized app** requires a **Linux kernel**.
+
+👉 With WSL 2, you can run **Linux containers on Windows**, bridging both worlds!
+
+---
+
+# 🧩 What about Wasm (WebAssembly)?
+
+**Wasm (WebAssembly)** is a **modern binary instruction set** that allows apps to be:
+
+* ⚡ **Smaller**
+* 🚀 **Faster**
+* 🔒 **More secure**
+* 🌍 **Highly portable**
+
+### How it works:
+
+1. Write your app in your favorite programming language.
+2. Compile it into a **Wasm binary**.
+3. Run it anywhere a **Wasm runtime** is available.
+
+### Limitations of Wasm:
+
+* Standards are still evolving.
+* Many **limitations** exist compared to containers.
+
+👉 Result: **Containers remain the dominant model** for cloud-native applications (for now).
+
+But… the **ecosystem is evolving**:
+
+* Docker and other container tools are already adapting to support **Wasm apps**.
+* In the future, expect to see **VMs, containers, and Wasm apps running side-by-side** in most cloud environments.
+
+---
+
+# 🤖 Docker and AI
+
+With the rise of **AI applications**, Docker continues to be one of the **most desired and most used developer tools** (as per the Stack Overflow Annual Developer Survey).
+
+### The Challenge 🚧
+
+Running **AI workloads inside containers** is difficult because:
+
+* GPUs and other AI acceleration hardware each have their **own drivers and SDKs**.
+* Standardizing them across containers is too complex.
+
+### The Solution 💡
+
+Docker introduced **Docker Model Runner**:
+
+* Lets developers run **local LLMs (Large Language Models)** **outside of containers**.
+* This gives direct access to the host’s hardware (GPUs, accelerators).
+* Makes it easier to run AI workloads efficiently without container overhead.
+
+---
