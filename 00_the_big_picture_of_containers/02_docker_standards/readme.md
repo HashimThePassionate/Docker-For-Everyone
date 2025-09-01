@@ -90,7 +90,7 @@ It has **two main parts**:
 ### 🔹 High-level view (Client ↔ Engine)
 
 <div align="center">
-  <img src="./images/01.png" width="500"/>
+  <img src="./images/01.svg" width="500"/>
 
 *Figure 2.1 – Docker client and engine.*
 </div>
@@ -105,7 +105,7 @@ It has **two main parts**:
 ### 🔹 Detailed view (CLI ↔ Daemon ↔ Components)
 
 <div align="center">
-  <img src="./images/02.png" alt="" width="500px"/>
+  <img src="./images/02.svg" alt="" width="500px"/>
 
 *Figure 2.2 – Docker CLI and daemon hiding complexity.*
 </div>
