@@ -1,25 +1,5 @@
 # 🐳 **Getting Docker**
 
-<details>
-<summary>📋 <strong>Table of Contents</strong></summary>
-
-| 📖 **Section** | 🔧 **Installation Method** | 💡 **Description** |
-|---|---|---|
-| [💻 Docker Desktop](#-docker-desktop) | **Recommended** ✅ | Full-featured solution for all platforms |
-| ├─ [🔹 Windows Prerequisites](#-windows-prerequisites) | Windows Setup | Hardware & WSL2 requirements |
-| ├─ [🔹 Installing on Windows](#-installing-on-windows) | Windows Install | Step-by-step Windows installation |
-| └─ [🔹 Installing on MacOS](#-installing-on-macos) | macOS Install | Step-by-step macOS installation |
-| [☁️ Docker with Multipass](#️-installing-docker-with-multipass) | VM Solution | Cloud-style Linux VMs |
-| ├─ [Basic Commands](#basic-commands) | VM Management | Core Multipass commands |
-| └─ [Launching VM with Docker](#launching-a-vm-with-docker-pre-installed) | Quick Setup | Pre-configured Docker VM |
-| [🐧 Docker on Linux](#-installing-docker-on-linux) | Native Linux | Direct Linux installation |
-| ├─ [Example: Ubuntu 24.04](#example-ubuntu-2404) | Ubuntu Setup | Ubuntu-specific installation |
-| └─ [Enable Docker without sudo](#enable-docker-without-sudo) | Permissions | User permission setup |
-
-</details>
-
----
-
 Docker can be installed and used in several ways. This guide covers:
 
 * **Docker Desktop** (recommended ✅)
