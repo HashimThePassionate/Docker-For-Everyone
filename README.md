@@ -70,10 +70,8 @@ Navigate each module by clicking the folder name 👇
 | [Getting Started](./00_the_big_picture_of_containers/) | 🐳 Docker Hello-World and Ops basics |
 | [Container Poetry](./01_containerizing_poetry) | 📦 Containerizing with Poetry (Python packaging) |
 | [Linux Command Line](./02_linux_command_line) | 🐧 Linux command line essentials |
-| [Building Images](./03_building_images) | 🖼️ Docker Commands Cheat Sheet & Image building |
-| [Working With Containers](./04_working_with_containers) | 📦 Container lifecycle, exec, inspect, logs |
-| [Running Multicontainers Applications](./05_running_multicontainers_applications) | 🧩 Running multi-container applications |
-| [Deploying the Application](./06_deploying_the_application) | 🚀 Deploying the application with Docker Compose |
+| [Docker Stuff](./03_technical_stuff/) | 🖼️ Docker Commands Cheat Sheet & Image building |
+| [Deploying the Application](./04_deploying_the_application/) | 🚀 Deploying the application with Docker Compose |
 
 ---
 
