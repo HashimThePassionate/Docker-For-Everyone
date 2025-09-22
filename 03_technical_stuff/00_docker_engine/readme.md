@@ -197,3 +197,122 @@ However, this design caused several issues:
 
 ---
 
+# 📦 **The Influence of the Open Container Initiative (OCI)**
+
+## 🌍 What is OCI?
+
+The **Open Container Initiative (OCI)** was founded to standardize the way containers work across different platforms and tools. At the same time Docker, Inc. was refactoring the Engine, the OCI began defining **container-related standards**.
+
+### 📝 Key Specifications
+
+1. **Image Specification (image-spec)**
+
+   * Defines how container images should be structured and packaged.
+
+2. **Runtime Specification (runtime-spec)**
+
+   * Defines how container runtimes should execute containers.
+
+3. **Distribution Specification (distribution-spec)**
+
+   * Defines how container images should be **distributed** via registries.
+
+📌 All specifications reached **version 1.0 in July 2017** and continue to evolve slowly but steadily:
+
+* `runtime-spec` → **v1.2.0**
+* `image-spec` → **v1.1.0**
+* `distribution-spec` → **v1.1.0**
+
+👉 Stability is the main goal, since countless projects depend on these specs.
+
+---
+
+## 🐳 Docker’s Role in OCI
+
+* Docker, Inc. was a **founding member** of the OCI.
+* Contributed heavily to defining the **original specifications**.
+* Continues to contribute code and guide the future of OCI standards.
+* Since **2016**, all Docker versions implement OCI specifications:
+
+  * **runc** → Creates **OCI-compliant containers** (runtime-spec).
+  * **BuildKit** → Builds **OCI-compliant images** (image-spec).
+  * **Docker Hub** → Functions as an **OCI-compliant registry** (distribution-spec).
+
+---
+
+## ⚙️ runc: The Low-Level Runtime
+
+* **Name**: always lowercase `runc` (pronounced “run see”).
+* **Role**: Reference implementation of the OCI **runtime-spec**.
+* **Origin**: Docker helped define the spec and contributed the initial `runc` code.
+
+### 🔑 Features of runc
+
+* Lightweight **CLI wrapper** around `libcontainer`.
+* Manages **OCI-compliant containers** directly.
+* Interfaces with the Linux **kernel** (via namespaces, cgroups).
+* Very **low-level tool** (no extras like image building or networking).
+
+📢 In practice:
+
+* **Docker** uses `runc` internally as its **low-level runtime**.
+* You get the **OCI compliance** of runc with Docker’s **feature-rich experience**.
+* **Kubernetes** also uses `runc` by default (paired with `containerd`).
+
+👉 Latest releases: [runc GitHub Releases](https://github.com/opencontainers/runc/releases)
+
+---
+
+## ⚙️ containerd: The High-Level Runtime
+
+* **Name**: always lowercase `containerd` (pronounced “container dee”).
+* **Role**: Reference implementation of the OCI **high-level runtime**.
+* **Origin**: Created by Docker, Inc., then donated to the **Cloud Native Computing Foundation (CNCF)**.
+
+### 🔑 Features of containerd
+
+* Manages **container lifecycle events**:
+
+  * Start
+  * Stop
+  * Delete containers
+* Uses **shims** to plug in different low-level runtimes (commonly `runc`).
+* Expanded functionality:
+
+  * **Image management** (push, pull).
+  * **Networking**.
+  * **Volumes**.
+* Modular design → Projects like **Kubernetes** can include only what they need.
+
+📢 Status: **Graduated CNCF project** → stable & production-ready.
+👉 Latest releases: [containerd GitHub Releases](https://github.com/containerd/containerd/releases)
+
+---
+
+## 🪜 runc vs. containerd
+
+| Component      | Type               | Responsibilities                                                               | Layer                   |
+| -------------- | ------------------ | ------------------------------------------------------------------------------ | ----------------------- |
+| **runc**       | Low-level runtime  | Executes container lifecycle by talking to kernel (namespaces, cgroups).       | **OCI layer**           |
+| **containerd** | High-level runtime | Manages lifecycle events, images, networks, volumes. Needs runc for execution. | **Orchestration layer** |
+
+---
+
+## ⚡ In Action: How Docker Uses Them Together
+
+1. **Docker CLI** → User runs a command (`docker run hello-world`).
+2. **dockerd** → Docker daemon parses request.
+3. **containerd** → Handles lifecycle management (start container).
+4. **Shim** → Keeps I/O open, allows runtime replacement.
+5. **runc** → Talks to Linux kernel to actually **spawn container**.
+6. ✅ Running container appears!
+
+---
+
+## 🧩 Why OCI Matters
+
+* Ensures **cross-platform compatibility**.
+* Promotes **reusability** (same runtime across Docker, Kubernetes, Firecracker, etc.).
+* Provides **stability & trust** for container-based systems.
+
+---
