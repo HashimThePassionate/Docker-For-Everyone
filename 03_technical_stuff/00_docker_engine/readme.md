@@ -24,7 +24,7 @@ the Docker Engine is made of specialized tools that together create and run cont
 ## 🖼️ Visual Representation
 
 <div align="center">
-  <img src="./images/01.png" alt="" width="600px"/>
+  <img src="./images/01.svg" alt="" width="600px"/>
 </div>
 
 ### Flow:
