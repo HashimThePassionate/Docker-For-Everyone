@@ -1,49 +1,86 @@
-# 📦 **Working with Images in Docker**
+# 📦 **Working with Docker Images**
 
-This section provides a **deep dive into Docker images**. You’ll learn what images are, how to work with them, and what happens under the hood. In the later section, you’ll learn how to **build your own images** while containerizing an application.
+This section provides a **deep dive into Docker images**. You’ll learn what images are, how they work under the hood, and how to use them in real-world projects.
+
+> **📢 Note:** If you are **new to Docker**, always start with the **Detailed & Comprehensive** section first. Once you have the concepts clear, move on to the **Project-Based** section for practical, hands-on experience.
 
 ---
 
-## 📖 Section Structure
+## 📖 Section 1: Detailed & Comprehensive (Under the Hood)
 
-The section is organized as follows:
+This section covers **theory, concepts, and internals** of Docker images in detail:
 
 1. **Docker Images – The TLDR**
 
-   * A quick summary of what Docker images are and why they matter.
+   * Quick summary of Docker images and their purpose.
 
 2. **Intro to Images**
 
-   * Understanding the concept of Docker images and their role in containers.
+   * What Docker images are and how they work with containers.
 
 3. **Pulling Images**
 
-   * How to download Docker images from a registry to your local system.
+   * Downloading images from remote registries to your local machine.
 
 4. **Image Registries**
 
-   * Explanation of registries like Docker Hub and private registries.
+   * Docker Hub, private registries, and image hosting options.
 
 5. **Image Naming and Tagging**
 
-   * Best practices for naming and versioning images using tags.
+   * Best practices for naming conventions and version tags.
 
 6. **Images and Layers**
 
-   * Understanding how Docker images are built in layers for efficiency.
+   * Understanding Docker’s layered architecture for efficiency.
 
 7. **Pulling Images by Digest**
 
-   * Using unique digests instead of tags to ensure consistency.
+   * Ensuring consistent images using digests instead of tags.
 
 8. **Multi-Architecture Images**
 
-   * How images work across different CPU architectures.
+   * Running images on different CPU architectures.
 
 9. **Vulnerability Scanning with Docker Scout**
 
-   * Scanning images for security issues using Docker Scout.
+   * Checking for security vulnerabilities in images.
 
 10. **Deleting Images**
 
-    * Removing unused images to free up disk space.
+    * Cleaning up unused images to save disk space.
+
+---
+
+## 🛠️ Section 2: Project-Based (Hands-On Practice)
+
+This section contains **real-world, practical exercises** to apply what you learned:
+
+1. **Images and Containers**
+2. **Simple Reactapp**
+3. **Dockerfile Instructions**
+4. **Using the right base image**
+5. **Copies files and directories**
+6. **Excluding files and directories**
+7. **Running Commands**
+8. **Setting Environment Variables**
+9. **Exposing Ports**
+10. **Setting the user**
+11. **Defining Entrypoints**
+12. **Speeding up builds**
+13. **Removing images**
+14. **Tagging images**
+15. **Sharing images in docker hub**
+16. **Saving and loading docker images**
+17. **Summary commands**
+
+---
+
+## 🚀 Learning Path for Beginners
+
+1️⃣ **Start with the Detailed & Comprehensive section** → Build your understanding of concepts.<br/>
+2️⃣ **Then move to the Project-Based section** → Apply your knowledge practically. <br/>
+3️⃣ **Finally, combine both** → Build confidence with theory + practice.
+
+---
+
