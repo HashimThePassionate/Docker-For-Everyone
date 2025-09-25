@@ -1,5 +1,62 @@
 # 🐳 **Docker Engine**
 
+<details>
+<summary>📋 <strong>Table of Contents</strong></summary>
+
+- [🐳 **Docker Engine**](#-docker-engine)
+  - [🚗 Analogy: Docker Engine = Car Engine](#-analogy-docker-engine--car-engine)
+  - [🖼️ Visual Representation](#️-visual-representation)
+    - [Flow:](#flow)
+  - [⚙️ Components of Docker Engine](#️-components-of-docker-engine)
+    - [🔹 1. Docker Daemon](#-1-docker-daemon)
+    - [🔹 2. LXC (Initial Runtime)](#-2-lxc-initial-runtime)
+    - [🔹 3. Replacing LXC with libcontainer](#-3-replacing-lxc-with-libcontainer)
+    - [🔹 4. containerd](#-4-containerd)
+    - [🔹 5. runc](#-5-runc)
+- [🐳 **Docker Engine Components \& Responsibilities**](#-docker-engine-components--responsibilities)
+  - [📌 Breaking up the Monolithic Docker Daemon](#-breaking-up-the-monolithic-docker-daemon)
+  - [🔨 Refactoring the Engine](#-refactoring-the-engine)
+    - [✅ Key Changes](#-key-changes)
+  - [🖼️ Docker Engine Components (Figure 5.2)](#️-docker-engine-components-figure-52)
+    - [🔑 Components Explained](#-components-explained)
+  - [🧩 Why This Matters?](#-why-this-matters)
+- [📦 **The Influence of the Open Container Initiative (OCI)**](#-the-influence-of-the-open-container-initiative-oci)
+  - [🌍 What is OCI?](#-what-is-oci)
+    - [📝 Key Specifications](#-key-specifications)
+  - [🐳 Docker’s Role in OCI](#-dockers-role-in-oci)
+  - [⚙️ runc: The Low-Level Runtime](#️-runc-the-low-level-runtime)
+    - [🔑 Features of runc](#-features-of-runc)
+  - [⚙️ containerd: The High-Level Runtime](#️-containerd-the-high-level-runtime)
+    - [🔑 Features of containerd](#-features-of-containerd)
+  - [🪜 runc vs. containerd](#-runc-vs-containerd)
+  - [⚡ In Action: How Docker Uses Them Together](#-in-action-how-docker-uses-them-together)
+  - [🧩 Why OCI Matters](#-why-oci-matters)
+- [🐳 **Starting a New Docker Container**](#-starting-a-new-docker-container)
+  - [🔄 Workflow of Container Creation](#-workflow-of-container-creation)
+  - [📝 Example: Start an NGINX Container](#-example-start-an-nginx-container)
+    - [🔍 Command Breakdown:](#-command-breakdown)
+  - [✅ Checking Running Containers](#-checking-running-containers)
+    - [Example Output:](#example-output)
+  - [⚙️ Daemon Communication Sockets](#️-daemon-communication-sockets)
+  - [🔒 Why Use `containerd` and `runc`?](#-why-use-containerd-and-runc)
+  - [🗑️ Removing the Container](#️-removing-the-container)
+    - [🔍 Command Breakdown:](#-command-breakdown-1)
+  - [⚙️ Docker Shim Explained](#️-docker-shim-explained)
+  - [🧩 What is a Shim?](#-what-is-a-shim)
+  - [🚀 Benefits of Shim in Docker](#-benefits-of-shim-in-docker)
+  - [🐧 Implementation on Linux](#-implementation-on-linux)
+    - [🔍 Viewing Processes](#-viewing-processes)
+  - [🤔 Do We Still Need the Daemon?](#-do-we-still-need-the-daemon)
+
+</details>
+
+---
+
+Docker Engine is the **server-side component of Docker** that runs and manages containers.
+If you've ever worked with **VMware**, you can think of Docker Engine as similar to **ESXi**.
+
+It is **modular**, built from many small specialized components, originating from projects like:*Docker Engine**
+
 Docker Engine is the **server-side component of Docker** that runs and manages containers.
 If you’ve ever worked with **VMware**, you can think of Docker Engine as similar to **ESXi**.
 
