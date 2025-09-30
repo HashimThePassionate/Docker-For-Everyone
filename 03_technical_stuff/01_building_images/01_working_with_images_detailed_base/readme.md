@@ -69,3 +69,76 @@ However, it's good to know that **Windows images can be quite huge** in comparis
 That’s the elevator pitch for Docker Images! 🚀
 
 ---
+
+# 🚀 **Introduction to Images**
+
+We've already mentioned that **images are like stopped containers**. You can even stop an active container and create a brand-new image directly from it.
+
+With this idea in mind, it's helpful to think of them this way:
+* **Images** are **build-time** constructs 🏗️.
+* **Containers** are **run-time** constructs 🏃.
+
+---
+
+## Visualizing the Process: Figure 6.1 📊
+
+<div align="center">
+  <img src="./images/01.svg"/>
+</div>
+
+The figure above shows the relationship between building an image and running containers.
+
+* **On the left**, we see the **Image (Build)**. It is shown as a stack of layers, representing the build process.
+* **On the right**, we see the **Container(s) (Run)**. The arrows show that a single image can be used to start multiple, separate containers.
+
+This diagram perfectly illustrates the build-time and run-time nature of images and containers and highlights that many containers can be launched from one image.
+
+---
+
+## From Image to Container ➡️
+
+The `docker run` command is the most common way to start a container from an image.
+
+Once a container is running, the image and the container become bound together. This creates an important dependency:
+
+> 🔐 You **cannot delete an image** until you stop and delete the container that is using it. If multiple containers are using the same image, you can only delete that image after you have deleted **all** of the containers using it.
+
+---
+
+## The Philosophy of Lean Containers 🍃
+
+Containers are designed to run a **single application** or microservice. Because of this, they should only contain the essentials:
+* Application code
+* Required dependencies
+
+You should **not** include non-essential items like build tools or troubleshooting utilities in your images.
+
+---
+
+## What are Slim Images? ✨
+
+For example, the official **Alpine Linux** image is currently about **3MB**. This is incredibly small!
+
+The reason it's so tiny is that it doesn’t come bundled with things you might not need, like:
+* Six different shells
+* Three different package managers
+* A bunch of tools you "might" need once every ten years
+
+In fact, it’s becoming more and more common for images to ship without a shell or a package manager at all. The rule is simple: if the application doesn’t need it at run-time, the image doesn’t include it. We call these **slim images**.
+
+---
+
+## Why Images Stay Small: No OS Kernel! 🧠
+
+Another factor that keeps images small is the **lack of an OS kernel**.
+
+This is because containers don't need their own kernel; they simply use the kernel of the host machine they are running on. The only OS-related parts in most images are filesystem objects. You will sometimes hear people say that images contain **"just enough OS"** to function.
+
+---
+
+## A Note on Windows Images 🪟
+
+Unfortunately, **Windows images can be huge**. For example, some Windows-based images can be gigabytes in size and can take a long time to push (upload) and pull (download).
+
+
+---
