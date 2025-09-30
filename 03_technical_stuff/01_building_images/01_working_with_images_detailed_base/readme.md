@@ -257,3 +257,66 @@ You can override both of these defaults, but Docker will always use them if you 
 
 
 ---
+
+# ☁️ **Image Registries**
+
+We store images in centralized places called **registries**. The main job of a registry is to securely store images and make them easy to access from different environments.
+
+---
+
+## The Build > Share > Run Pipeline: Figure 6.2 🏗️➡️🤝➡️🏃
+
+<div align="center">
+  <img src="./images/02.svg"/>
+</div>
+
+
+This figure shows just how central registries are in the typical workflow, which follows a <br/> **build > share > run** pipeline.
+
+* **Step 1 (Build)**: On the far left, a layered **Image** is built.
+* **Step 2 (Share)**: The image is then **Pushed** to a central **Registry**. This is the "share" phase of the pipeline, where the image becomes available to others.
+* **Step 3 (Run)**: Finally, the image is **Pulled** from the registry to an environment where it can be used to launch a **Container**. This is the "run" phase.
+
+---
+
+## Technical Details and Standards ⚙️
+
+Most modern registries implement the **OCI distribution-spec**, and because of this, we sometimes call them **OCI registries**.
+
+Most registries also implement the **Docker Registry v2 API**. This is important because it means you can use standard tools, like the Docker Command Line Interface (CLI), to interact with them in a consistent way.
+
+Some registries also offer advanced features, such as:
+* Image scanning (for security vulnerabilities) 🕵️
+* Integration with build pipelines 🔄
+
+---
+
+## Common Registries 🌐
+
+The most common and well-known registry is **Docker Hub**. However, many others exist, including:
+* 3rd-party internet-based registries
+* Secure on-premises registries (hosted on your own private network)
+
+As mentioned before, Docker is "opinionated" and will **default to using Docker Hub** unless you specifically tell it the name of a different registry. For the rest of this book, we'll use Docker Hub, but the principles apply to all other registries.
+
+---
+
+## Registry Architecture: Repositories and Images 🏛️
+
+The structure of a registry is quite simple:
+* Image registries contain one or more **image repositories**.
+* Image repositories contain one or more **images** (usually different versions of the same software).
+
+### Visualizing the Architecture: Figure 6.3
+
+<div align="center">
+  <img src="./images/03.svg"/>
+</div>
+
+This figure shows the architecture of a typical image registry.
+
+* The outermost box represents the entire **OCI Registry**.
+* Inside the registry, there are three distinct **image repositories**: `Repo 1`, `Repo 2`, and `Repo 3`.
+* Within each repository, you can see one or more images. For example, `Repo 3` contains three different versions of an image: `Image v1.0`, `Image v1.1`, and `Image v1.2`.
+
+---
