@@ -320,3 +320,45 @@ This figure shows the architecture of a typical image registry.
 * Within each repository, you can see one or more images. For example, `Repo 3` contains three different versions of an image: `Image v1.0`, `Image v1.1`, and `Image v1.2`.
 
 ---
+
+# **Official Repositories** 🐳
+
+Docker Hub's **official repositories** are a goldmine for developers. These images are handpicked by Docker and application vendors to ensure they are **up-to-date, secure, and well-documented**. Think of them as the trustworthy, verified software you want to build on.
+
+You can easily spot them by their green **Docker Official Image** badge and their top-level location in the Docker Hub namespace. A few examples include:
+
+* `nginx`: [https://hub.docker.com/\_/nginx/](https://hub.docker.com/_/nginx/) 🌐
+* `busybox`: [https://hub.docker.com/\_/busybox/](https://hub.docker.com/_/busybox/) 📦
+* `redis`: [https://hub.docker.com/\_/redis/](https://hub.docker.com/_/redis/) 💾
+* `mongo`: [https://hub.docker.com/\_/mongo/](https://hub.docker.com/_/mongo/) 🍃
+
+---
+
+## **Unofficial Repositories** ⚠️
+
+Now, let's talk about the "wild west"—**unofficial repositories**. You must be very careful when using these. For example, personal repositories:
+
+* `nigelpoulton/gsd`: [https://hub.docker.com/r/nigelpoulton/gsd-book/](https://hub.docker.com/r/nigelpoulton/gsd-book/) 📚
+* `nigelpoulton/k8sbook`: [https://hub.docker.com/r/nigelpoulton/k8sbook/](https://hub.docker.com/r/nigelpoulton/k8sbook/) ⚙️
+
+The key giveaway here is the `nigelpoulton` second-level namespace. This immediately tells you they are **not official**.
+
+The golden rule is to always assume that any image from an unofficial repository is **unsafe** until proven otherwise. It's simply a good security practice. Even with official images, a healthy dose of caution is always recommended.
+
+---
+
+<div align="center">
+  <img src="./images/04.png"/>
+</div>
+
+
+### **Figure 6.4 - Official Repos on Docker Hub** 🖼️✨
+
+This figure beautifully illustrates two official repositories: **Alpine** and **NGINX**.
+
+* **Official Image Badge**: Both repositories feature a green checkmark icon with the label "**Docker Official Image**". This is your clear sign of a trusted source. ✅
+* **Key Information**: The figure shows important details, including the repository name, a brief description, and impressive statistics. You can see both have over a **billion pulls (1B+)** and more than **10,000 stars (10K+)**, which speaks volumes about their popularity. 🚀
+* **Wide Compatibility**: The image also highlights that these images are available for many **CPU architectures**, such as ARM64 and 386. This proves they are highly versatile. 💻
+* **Trust Indicators**: On the left, the "Trusted Content" panel shows a selected checkbox for "**Docker Official Image**", reinforcing their official status. ✔️
+
+---
