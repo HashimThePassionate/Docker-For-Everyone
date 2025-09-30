@@ -362,3 +362,75 @@ This figure beautifully illustrates two official repositories: **Alpine** and **
 * **Trust Indicators**: On the left, the "Trusted Content" panel shows a selected checkbox for "**Docker Official Image**", reinforcing their official status. ✔️
 
 ---
+
+# **Understanding Docker Image Names and Tags** 🐳
+
+When you work with Docker, images have specific names that tell you a lot about them. Think of it like a mailing address for a package\! 📦 This helps you know where the image comes from and what version it is.
+
+### **Figure Explanation: Anatomy of an Image Name** 🖼️
+
+The image you provided shows the different parts of a full Docker image name. Let's break it down:
+
+  * **Registry:** This is the server where the images are stored. In the example, it's `docker.io/`. This is the official Docker Hub registry.
+  * **User/org:** This part shows the name of the person or organization that owns the repository. In this case, it's `hashimtahir/`.
+  * **Repository:** This is the name of the specific project or application. The example shows `python-project:`.
+  * **Image/tag:** This is the version or specific label for the image. The example shows `v1.1`.
+
+If you don't specify the registry or tag, Docker often fills in the default values for you. For example, it will assume `docker.io` as the registry and `latest` as the tag. ✨
+
+-----
+
+### **Pulling Official Images** 🚀
+
+Pulling images from official Docker repositories is very easy. The basic command is:
+
+```bash
+docker pull <repository-name>:<image-tag>
+```
+
+Here are some examples explained in detail:
+
+  * `docker pull redis:latest`: This command downloads the `redis` image that has the `latest` tag. This is the default if you don't specify a tag.
+  * `docker pull redis:8.0-M02`: This pulls the `redis` image with a specific version tag, which is `8.0-M02`.
+  * `docker pull busybox:glibc`: This pulls the `busybox` image that is tagged with `glibc`.
+  * `docker pull alpine`: Since no tag is mentioned, this command automatically pulls the `alpine` image with the `latest` tag.
+
+Remember, if a repository doesn't have an image with the `latest` tag, the pull command will fail. Also, the `latest` tag doesn't always mean it's the newest version of the image. 🧐
+
+-----
+
+### **Pulling Unofficial Images and from Other Registries** 🌐
+
+To pull an image from an unofficial repository on Docker Hub, you just need to add the username or organization name before the repository name.
+
+  * `docker pull hashimtahir/tu-demo:v2`: This command pulls the image tagged as `v2` from the repository named `tu-demo`, which is owned by the user `hashimtahir`.
+
+You can also pull images from other registries, not just Docker Hub. You just need to include the registry's name (like its website address).
+
+  * `docker pull ghcr.io/regclient/regsync:latest`: This command pulls the `latest` image from the `regclient/regsync` repository, which is located on GitHub Container Registry (`ghcr.io`).
+
+The output from this command shows the download process and confirms that the image was downloaded successfully. It looks the same as pulling from Docker Hub because these registries often use the same standard technology. 😊
+
+-----
+
+### **Images with Multiple Tags** 🏷️
+
+A single Docker image can have more than one tag, like giving the same book multiple labels. The `docker images` command helps you see this.
+
+Let's look at the example output you provided:
+
+```bash
+$ docker images
+REPOSITORY             TAG    IMAGE ID       CREATED        SIZE
+hashimtahir/tu-demo    latest b4210d0aa52f   2 days ago     115MB
+hashimtahir/tu-demo    v1     b4210d0aa52f   2 days ago     115MB
+hashimtahir/tu-demo    v2     6ba12825d092   12 minutes ago 115MB
+```
+
+Here's a detailed explanation:
+
+  * The images with tags `latest` and `v1` both have the exact same **IMAGE ID** (`b4210d0aa52f`). This means they are the same image, just with different names or labels. 💖
+  * The `v2` image has a different **IMAGE ID** (`6ba12825d092`), so it's a completely different and newer image.
+  * This shows that the `latest` tag points to the `v1` image, even though the `v2` image is newer. It's a great example of why you should not always assume `latest` is the most recent version\! ✅
+
+---
