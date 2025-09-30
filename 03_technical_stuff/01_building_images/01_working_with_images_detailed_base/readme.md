@@ -142,3 +142,118 @@ Unfortunately, **Windows images can be huge**. For example, some Windows-based i
 
 
 ---
+
+# 📥 **Pulling Images**
+
+A brand new, clean Docker installation starts with an **empty local repository**.
+
+-----
+
+## What is the Local Repository? 📂
+
+The **local repository** is simply a special area on your local machine where Docker stores images for easier and faster access. You might also hear it called the **image cache**.
+
+  * **On Linux**, this is usually located at `/var/lib/docker/`.
+  * **With Docker Desktop**, it's stored inside the Docker Virtual Machine (VM).
+
+You can check what's inside your local repository by running the following command. The example below shows three images related to Docker Desktop extensions. Your list will likely be different and might even be empty.
+
+### Code Snippet: Listing Local Images
+
+```bash
+docker images
+```
+
+### Explanation of the Command
+
+This command lists all the Docker images currently stored on your local machine.
+
+### Example Output
+
+```
+REPOSITORY    TAG      IMAGE ID      CREATED        SIZE
+ubuntu        24.04    7c06e91f61fa  2 months ago   117MB
+```
+
+  * **REPOSITORY**: The name of the image.
+  * **TAG**: The specific version of the image (e.g., `24.04`, `latest`).
+  * **IMAGE ID**: A unique identifier for the image.
+  * **CREATED**: When the image was built.
+  * **SIZE**: The amount of disk space the image uses.
+
+-----
+
+## How to Pull an Image ☁️
+
+The process of getting images from a registry (like Docker Hub) and downloading them to your local repository is called **pulling**.
+
+Let's pull the official `redis` image and then check that it exists in our local repository.
+
+> **Linux User Note** 🐧:
+> If you are on Linux and haven't added your user account to the local `docker` Unix group, you may need to add `sudo` to the beginning of all the following Docker commands.
+
+### Code Snippet: Pulling the Redis Image
+
+```bash
+docker pull redis
+```
+
+### Explanation of the Command
+
+This command tells Docker to find an image named `redis` in the default registry (Docker Hub) and download it to your local machine.
+
+### Command Output Explained
+
+```
+Using default tag: latest
+latest: Pulling from library/redis
+d107e437f729: Pull complete
+cf596724f63e: Pull complete
+a3f725691cac: Pull complete
+d7e6e9e45ecf: Pull complete
+bd022da7d981: Pull complete
+4f4fb700ef54: Pull complete
+349073970fc7: Pull complete
+Digest: sha256:b0341dc2e0ce47beb7fcef80089b4d469b10ae94fbbea50072b878d7c88de487
+Status: Downloaded newer image for redis:latest
+docker.io/library/redis:latest
+```
+
+  * `Using default tag: latest`: Since we didn't specify a version, Docker automatically chose the `latest` tag.
+  * `latest: Pulling from library/redis`: Docker confirms it's pulling the `latest` tag from the official `redis` library.
+  * `d107e437f729: Pull complete`: Each of these lines represents a different layer of the image being downloaded. Images are made of multiple layers, and Docker pulls each one.
+  * `Digest: sha256:...`: This is a unique signature for the image content, ensuring what you downloaded is authentic and hasn't been tampered with.
+  * `Status: Downloaded newer image...`: A success message confirming the download is complete.
+  * `docker.io/library/redis:latest`: This is the full, official name of the image that was pulled.
+
+### Code Snippet: Verifying the Pull
+
+Now, let's run `docker images` again to see the result.
+
+```bash
+docker images
+```
+
+### New Output
+
+```
+REPOSITORY    TAG      IMAGE ID      CREATED       SIZE
+redis         latest   b0341dc2e0ce  6 weeks ago   200MB
+ubuntu        24.04    7c06e91f61fa  2 months ago  117MB
+```
+
+As you can see, the `redis` image with the `latest` tag is now in our local repository, ready to be used\!
+
+-----
+
+## Docker's Default Assumptions 🤔
+
+When we ran `docker pull redis`, Docker was "opinionated" and made two assumptions because we didn't provide more specific details:
+
+1.  It assumed you wanted to pull the image tagged as **`latest`**.
+2.  It assumed you wanted to pull the image from **Docker Hub**.
+
+You can override both of these defaults, but Docker will always use them if you don't specify otherwise.
+
+
+---
